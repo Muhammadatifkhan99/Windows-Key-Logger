@@ -15,7 +15,6 @@ A robust and lightweight keylogging application designed for monitoring and logg
 - Building the Project
 - Contributing
 - Ethical Use Disclaimer
-- License
 
 ## Overview
 
