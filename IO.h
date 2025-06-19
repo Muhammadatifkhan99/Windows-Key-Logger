@@ -23,13 +23,14 @@ namespace IO
 
     bool MkOneDr(std::string path)
     {
-        return (bool) CreateDirectory(path.c_str(), NULL) ||
+        return (bool) CreateDirectory(path.c str(), NULL) ||
         GetLastError() == ERROR_ALREADY_EXISTS;
     }
 
     bool MKDir(std:: string path)
     {
         for(char &c: path)
+        {
             if(c == '\\')
             {
                 c = '\0';
@@ -37,6 +38,7 @@ namespace IO
                     return false;
                 c = '\\';
             }
+        }
         return true;
     }
 
@@ -45,25 +47,27 @@ namespace IO
     {
         std::string path = GetOurPath(true);
         Helper::DateTime dt;
-        std::string name = dt.GetDateTimeString("_") + ".log"; //underline is used instaed of colon becose windows reserve :
+        std::string name = dt.GetDateString("_") + ".log"; //underline is used instaed of colon becose windows reserve :
 
         try
         {
             std::ofstream file(path + name);
             if(!file) return "";
             std::ostringstream s;
-            s << "[" << dt.GetDateTimeString() << "]" << std::endl << t << std::endl;
+            s << "[" << dt.GetDateTimeString() << "]" << std::endl << std::endl;
             std::string data = Base64::EncryptB64(s.str());
             file << data;
             if(!file)
                 return "";
             file.close();
             return name;
-        }
-        catch(...)
+        } catch(...)
         {
             return "";
         }
     }
 }
+
+
+
 #endif // IO_H

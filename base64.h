@@ -52,10 +52,10 @@ namespace Base64
             }
         }
         if(bits > -6)
-            ret.push_back(BASE64_CODES[((val << 8) >> (bits + 8)) &b63]);
+            ret.push_back(BASE64_CODES[(val << 8) >> (bits + 8)) &b63]]);
 
         while(ret.size() % 4 )
-            ret.push_back('=');
+            ret.push_back("=");
 
         return ret;
     }

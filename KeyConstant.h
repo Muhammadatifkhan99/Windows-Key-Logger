@@ -9,7 +9,7 @@
 class KeyPair {
 
 public:
-    KeyPair (const std::string &vk = "",const std::string &name : VKName (vk),
+    KeyPair (const std::string &vk = "",const std::string &name) : VKName (vk),
                                                                   Name (name)
                                                                 {}
     std::string VKName; //virtual key name

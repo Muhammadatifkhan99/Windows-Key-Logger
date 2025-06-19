@@ -1,55 +1,5 @@
 # depslib dependency file v1.0
-1750184146 source:c:\users\muhammad abrar\desktop\keylogger\keylogger\main.cpp
+1746425479 source:c:\users\muhammad abrar\desktop\keylogger\keylogger\main.cpp
 	<iostream>
 	<windows.h>
-	"Helper.h"
-	"KeyConstants.h"
-	"base64.h"
-	"IO.h"
-	"Timer.h"
-	"SendMail.h"
-	"KeybHook.h"
-
-1746699567 c:\users\muhammad abrar\desktop\keylogger\keylogger\helper.h
-	<ctime>
-	<string>
-	<sstream>
-	<fstream>
-
-1746906002 c:\users\muhammad abrar\desktop\keylogger\keylogger\keyconstants.h
-	<map>
-	<string>
-
-1746906543 c:\users\muhammad abrar\desktop\keylogger\keylogger\base64.h
-	<vector>
-	<string>
-
-1746907408 c:\users\muhammad abrar\desktop\keylogger\keylogger\io.h
-	<string>
-	<cstdlib>
-	<fstream>
-	"windows.h"
-	"Helper.h"
-	"base64.h"
-
-1747078173 c:\users\muhammad abrar\desktop\keylogger\keylogger\timer.h
-	<thread>
-	<chrono>
-	<functional>
-
-1750183475 c:\users\muhammad abrar\desktop\keylogger\keylogger\sendmail.h
-	<fstream>
-	<vector>
-	"windows.h"
-	"IO.h"
-	"Timer.h"
-	"Helper.h"
-
-1750184460 c:\users\muhammad abrar\desktop\keylogger\keylogger\keybhook.h
-	<iostream>
-	<fstream>
-	"windows.h"
-	"KeyConstants.h"
-	"Timer.h"
-	"SendMail.h"
 
