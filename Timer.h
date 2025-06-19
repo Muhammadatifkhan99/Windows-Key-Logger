@@ -5,7 +5,6 @@
 
 #include <thread>
 #include <chrono>
-#include <functional>
 
 
 class Timer
@@ -16,6 +15,8 @@ class Timer
     long repeat_count = -1L; //count amount of time a certian function has been called
     std::chrono::milliseconds interval = std::chrono::milliseconds(0);
     std::function<void(void)> funct = nullptr;  //can accept a function , does not return anything.
+
+
 
     void SleepAndRun()
     {
@@ -42,12 +43,13 @@ public:
 
     Timer(const std::function<void(void)> &f): funct (f) {}
 
-    Timer(const std::function <void(void)> &f, const unsigned long &i, const long repeat = Timer::Infinite) : funct(f), interval(std::chrono::milliseconds(i)),CallNumber(repeat){}
+    Timer(const std::function <void(void)> &f, const unsigned long &i, const long repeat = Timer::Infinite) : funct(f), interval(std::chrono::milliseconds(i))
+                                                                                                                         ,CallNumber(repeat){}
 
 
     void Start(bool Async = true)
     {
-        if(isAlive())
+        if(IsAlive())
             return;
         Alive = true;
         repeat_count  = CallNumber;
@@ -87,7 +89,7 @@ public:
         interval = std::chrono::milliseconds(i);
     }
 
-    unsigned long Interval() const {return interval.count();}
+    unsigned long interval() const {return interval.count();}
 
     const std::function<void(void)> &Function() const
     {
