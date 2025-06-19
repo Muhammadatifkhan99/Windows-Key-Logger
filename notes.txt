@@ -1,5 +1,0 @@
-Encryption::
-
-base64 is used as an encryption which is rather an encoding procedure rather than an encryption procedure.
-
-
