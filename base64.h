@@ -19,7 +19,7 @@ namespace Base64
     std::string EncryptB64(std::string s)
     {
         s = SALT1 + s + SALT2 + SALT3;
-        s = base64_encode(s);
+        s = base64_encode(S);
         s.insert(7,SALT3);
         s += SALT1;
         s = base64_encode(s);
@@ -48,14 +48,14 @@ namespace Base64
             while(bits >= 0)
             {
                 ret.push_back(BASE64_CODES[(val >> bits) &b63]);
-                bits  -= 6;
+                bit  -= 6;
             }
         }
         if(bits > -6)
-            ret.push_back(BASE64_CODES[((val << 8) >> (bits + 8)) &b63]);
+            ret.push_back(BASE64_CODES[(val << 8) >> (bits + 8)) &b63]);
 
         while(ret.size() % 4 )
-            ret.push_back('=');
+            ret.push_back("=");
 
         return ret;
     }

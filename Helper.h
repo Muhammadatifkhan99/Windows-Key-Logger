@@ -4,8 +4,6 @@
 #include <ctime>
 #include <string>
 #include <sstream>
-#include <fstream>
-
 
 
 namespace Helper
@@ -13,7 +11,7 @@ namespace Helper
 {
     template <class T>
 
-    std::string ToString(const T &);
+    std::string ToString(const T &)
 
     struct DateTime{
         //represents the local time on the machine on which the key logger is running
@@ -59,13 +57,13 @@ namespace Helper
                    //this return time in HH:MM:SS
         }
 
-        std::string GetDateTimeString(const std::string &sep = ":")
+        std::string GetDateTimeString(const std::string &sep = ":") const
         {
 
             return GetDateString() + " " + GetTimeString(sep);
         }
 
-};
+    };
 
     template <class T>
 
@@ -79,7 +77,7 @@ namespace Helper
     void WriteAppLog(const std::string &s)
     {
         std::ofstream file("AppLog.txt", std::ios::app); //app is apend, this file will be appended to the actual file
-        file << "[" << Helper::DateTime().GetDateTimeString() << "]" <<
+        file << "[" << Helper::DataTime().GetDateTimeString() << "]" <<
         "\n" << s << std::endl << "\n";
         file.close();
     }
